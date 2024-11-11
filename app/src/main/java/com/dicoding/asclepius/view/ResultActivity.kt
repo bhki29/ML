@@ -56,7 +56,7 @@ class ResultActivity : AppCompatActivity() {
                 inference = inferenceTime.toString()
             )
             historyViewModel.insertHistory(listOf(historyEntity))
-            Toast.makeText(this, "Data Saved successfully", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Data Saved success", Toast.LENGTH_SHORT).show()
             onBackPressedDispatcher.onBackPressed()
         }
 

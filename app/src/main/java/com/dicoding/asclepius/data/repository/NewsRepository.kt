@@ -21,7 +21,9 @@ class NewsRepository private constructor(private val apiService: ApiService) {
                 apiKey = BuildConfig.API_KEY
             )
             val filteredArticles =
-                response.articles.filter { it.author != null && it.urlToImage != null }
+                response.articles.filter {
+                    it.author != null && it.urlToImage != null
+                }
 
             emit(Result.Success(filteredArticles))
         } catch (e: Exception) {
