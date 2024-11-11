@@ -36,7 +36,7 @@
         android:contentDescription="@string/smooth_bottom_bar_description"
         app:sideMargins="10dp"
         app:indicatorRadius="10dp"
-        app:itemPadding="8dp"
+        app:itemPadding="10dp"
         app:iconSize="24dp"
         app:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"

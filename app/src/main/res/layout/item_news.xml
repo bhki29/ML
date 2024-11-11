@@ -19,7 +19,7 @@
         <ImageView
             android:id="@+id/img_picture"
             android:layout_width="0dp"
-            android:layout_height="200dp"
+            android:layout_height="150dp"
             android:contentDescription="@string/image"
             android:scaleType="centerCrop"
             android:visibility="visible"
@@ -38,7 +38,6 @@
             android:gravity="center"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:fontFamily="@font/roboto"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/img_picture"
             tools:text="@string/title" />
@@ -63,7 +62,6 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:fontFamily="@font/source_sans"
             android:gravity="center"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"

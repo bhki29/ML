@@ -4,11 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.fragment.AnalyzeFragment">
+    tools:context=".view.analyze.AnalyzeFragment">
 
     <ProgressBar
         android:id="@+id/progressIndicator"
-        style="?android:attr/progressBarStyleHorizontal"
+        style="?android:attr/progressBarStyleInverse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -38,48 +38,42 @@
 
     <Button
         android:id="@+id/galleryButton"
-        android:layout_width="0dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="8dp"
-        android:elevation="0dp"
-        android:padding="8dp"
-        android:textSize="18sp"
+        android:layout_marginTop="24dp"
         android:drawablePadding="8dp"
+        android:elevation="0dp"
         android:gravity="center"
+        android:padding="8dp"
         android:text="@string/gallery"
         android:textColor="@color/white"
-        android:fontFamily="@font/poppins"
-        app:iconTint="@color/white"
-        app:icon="@drawable/baseline_insert_photo_24"
+        android:textSize="18sp"
         app:cornerRadius="8dp"
         app:iconGravity="textStart"
-        app:layout_constraintBottom_toTopOf="@+id/analyzeButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:iconTint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/previewImageView" />
 
     <Button
         android:id="@+id/analyzeButton"
-        android:layout_width="0dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="12dp"
-        android:elevation="0dp"
-        android:padding="8dp"
-        android:textSize="18sp"
+        android:layout_marginBottom="100dp"
         android:drawablePadding="8dp"
+        android:elevation="0dp"
         android:gravity="center"
+        android:padding="8dp"
         android:text="@string/analyze"
         android:textColor="@color/white"
-        android:fontFamily="@font/poppins"
-        app:iconTint="@color/white"
-        app:icon="@drawable/baseline_analytics_24"
+        android:textSize="18sp"
         app:cornerRadius="8dp"
         app:iconGravity="textStart"
+        app:iconTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/previewImageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

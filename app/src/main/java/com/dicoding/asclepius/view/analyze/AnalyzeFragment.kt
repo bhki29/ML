@@ -1,4 +1,4 @@
-package com.dicoding.asclepius.view.fragment
+package com.dicoding.asclepius.view.analyze
 
 import android.content.Intent
 import android.net.Uri
@@ -16,7 +16,6 @@ import androidx.fragment.app.activityViewModels
 import com.dicoding.asclepius.R
 import com.dicoding.asclepius.helper.ImageClassifierHelper
 import com.dicoding.asclepius.view.ResultActivity
-import com.dicoding.asclepius.view.model.AnalyzeModel
 import com.yalantis.ucrop.UCrop
 import org.tensorflow.lite.task.gms.vision.classifier.Classifications
 import java.io.File
@@ -25,7 +24,7 @@ class AnalyzeFragment : Fragment() {
 
     private lateinit var imageView: ImageView
 
-    private val analyzeModel: AnalyzeModel by activityViewModels()
+    private val analyzeModel: AnalyzeViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

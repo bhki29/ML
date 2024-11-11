@@ -1,15 +1,18 @@
 package com.dicoding.asclepius.view
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.dicoding.asclepius.R
 import com.dicoding.asclepius.databinding.ActivityMainBinding
-import com.dicoding.asclepius.view.fragment.CancerFragment
-import com.dicoding.asclepius.view.fragment.AnalyzeFragment
-import com.dicoding.asclepius.view.fragment.NewsFragment
+import com.dicoding.asclepius.view.analyze.AnalyzeFragment
+import com.dicoding.asclepius.view.history.HistoryActivity
+import com.dicoding.asclepius.view.news.NewsFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -58,6 +61,23 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_history, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when (item.itemId) {
+            R.id.icon_history -> {
+                val intent = Intent(this@MainActivity, HistoryActivity::class.java)
+                startActivity(intent)
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putInt(SELECTED_FRAGMENT_KEY, selectedFragmentIndex)
@@ -67,7 +87,6 @@ class MainActivity : AppCompatActivity() {
         val selectedFragment = when (index) {
             0 -> NewsFragment()
             1 -> AnalyzeFragment()
-            2 -> CancerFragment()
             else -> AnalyzeFragment()
         }
 

@@ -1,10 +1,10 @@
 package com.dicoding.asclepius.di
 
 import android.content.Context
-import com.dicoding.asclepius.data.local.CancerRepository
-import com.dicoding.asclepius.data.local.room.CancerDatabase
-import com.dicoding.asclepius.data.remote.NewsRepository
-import com.dicoding.asclepius.data.remote.retrofit.ApiConfig
+import com.dicoding.asclepius.data.local.room.HistoryDatabase
+import com.dicoding.asclepius.data.repository.HistoryRepository
+import com.dicoding.asclepius.data.repository.NewsRepository
+import com.dicoding.asclepius.data.retrofit.ApiConfig
 
 object Injection {
     fun provideNewsRepository(context: Context): NewsRepository {
@@ -12,10 +12,10 @@ object Injection {
         return NewsRepository.getInstance(apiService)
     }
 
-    fun provideCancerRepository(context: Context): CancerRepository {
-        val database = CancerDatabase.getInstance(context)
-        val dao = database.cancerDao()
+    fun provideHistoryRepository(context: Context): HistoryRepository {
+        val database = HistoryDatabase.getInstance(context)
+        val dao = database.historyDao()
 
-        return CancerRepository.getInstance(dao)
+        return HistoryRepository.getInstance(dao)
     }
 }

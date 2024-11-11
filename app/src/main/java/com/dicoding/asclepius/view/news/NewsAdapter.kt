@@ -1,4 +1,4 @@
-package com.dicoding.asclepius.view.adapter
+package com.dicoding.asclepius.view.news
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -7,11 +7,13 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.asclepius.R
-import com.dicoding.asclepius.data.remote.response.ArticlesItem
+import com.dicoding.asclepius.data.response.ArticlesItem
 import com.dicoding.asclepius.databinding.ItemNewsBinding
 import com.dicoding.asclepius.util.LoadImage
 
-class NewsAdapter(private val onItemClick: (String) -> Unit) : ListAdapter<ArticlesItem, NewsAdapter.NewsViewHolder>(DIFF_CALLBACK) {
+class NewsAdapter(private val onItemClick: (String) -> Unit) : ListAdapter<ArticlesItem, NewsAdapter.NewsViewHolder>(
+    DIFF_CALLBACK
+) {
 
     class NewsViewHolder(private val binding: ItemNewsBinding, private val onItemClick: (String) -> Unit) : RecyclerView.ViewHolder(binding.root) {
 

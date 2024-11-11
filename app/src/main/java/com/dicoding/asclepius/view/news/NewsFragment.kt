@@ -1,4 +1,4 @@
-package com.dicoding.asclepius.view.fragment
+package com.dicoding.asclepius.view.news
 
 import android.content.Intent
 import android.net.Uri
@@ -14,9 +14,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.asclepius.R
 import com.dicoding.asclepius.util.DialogUtil.showNoInternetDialog
 import com.dicoding.asclepius.util.Network
-import com.dicoding.asclepius.view.adapter.NewsAdapter
-import com.dicoding.asclepius.view.model.NewsModel
-import com.dicoding.asclepius.view.factory.NewsModelFactory
 
 
 class NewsFragment : Fragment() {

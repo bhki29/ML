@@ -1,11 +1,12 @@
-package com.dicoding.asclepius.data.remote
+package com.dicoding.asclepius.data.repository
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import com.dicoding.asclepius.BuildConfig
-import com.dicoding.asclepius.data.remote.response.ArticlesItem
-import com.dicoding.asclepius.data.remote.retrofit.ApiService
+import com.dicoding.asclepius.data.remote.Result
+import com.dicoding.asclepius.data.response.ArticlesItem
+import com.dicoding.asclepius.data.retrofit.ApiService
 
 
 class NewsRepository private constructor(private val apiService: ApiService) {
@@ -14,7 +15,7 @@ class NewsRepository private constructor(private val apiService: ApiService) {
         emit(Result.Loading)
         try {
             val response = apiService.getNews(
-                query = "cancer",
+                query = "history",
                 category = "health",
                 language = "en",
                 apiKey = BuildConfig.API_KEY

@@ -1,12 +1,12 @@
-package com.dicoding.asclepius.view.model
+package com.dicoding.asclepius.view.news
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.dicoding.asclepius.data.remote.NewsRepository
+import com.dicoding.asclepius.data.repository.NewsRepository
 import com.dicoding.asclepius.data.remote.Result
-import com.dicoding.asclepius.data.remote.response.ArticlesItem
+import com.dicoding.asclepius.data.response.ArticlesItem
 
 class NewsModel(private val newsRepository: NewsRepository) : ViewModel() {
     private val _listNews = MutableLiveData<List<ArticlesItem>>()

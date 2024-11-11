@@ -4,8 +4,8 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "cancers")
-class CancerEntity(
+@Entity(tableName = "history")
+class HistoryEntity(
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0,
 
@@ -17,4 +17,4 @@ class CancerEntity(
     var date: String,
     @field:ColumnInfo(name = "inference")
     var inference: String,
-    )
+)

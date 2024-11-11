@@ -8,10 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.dicoding.asclepius.R
-import com.dicoding.asclepius.data.local.entity.CancerEntity
+import com.dicoding.asclepius.data.local.entity.HistoryEntity
 import com.dicoding.asclepius.databinding.ActivityResultBinding
-import com.dicoding.asclepius.view.model.CancersModel
-import com.dicoding.asclepius.view.factory.CancersModelFactory
+import com.dicoding.asclepius.view.history.HistoryViewModel
+import com.dicoding.asclepius.view.history.HistoryViewModelFactory
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -19,8 +19,8 @@ import java.util.Locale
 class ResultActivity : AppCompatActivity() {
     private lateinit var binding: ActivityResultBinding
 
-    private val cancersModel: CancersModel by viewModels {
-        CancersModelFactory.getInstance(this)
+    private val historyViewModel: HistoryViewModel by viewModels {
+        HistoryViewModelFactory.getInstance(this)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,13 +49,13 @@ class ResultActivity : AppCompatActivity() {
         binding.tvResult.text = getString(R.string.result_text, resultText, inferenceTime, formattedTime)
 
         binding.btnSave.setOnClickListener {
-            val cancerEntity = CancerEntity(
+            val historyEntity = HistoryEntity(
                 mediaCover = imageUriString ?: "",
                 title = resultText ?: "",
                 date = formattedTime,
                 inference = inferenceTime.toString()
             )
-            cancersModel.insertCancers(listOf(cancerEntity))
+            historyViewModel.insertHistory(listOf(historyEntity))
             Toast.makeText(this, "Data Saved successfully", Toast.LENGTH_SHORT).show()
             onBackPressedDispatcher.onBackPressed()
         }

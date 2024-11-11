@@ -9,7 +9,6 @@
 
     <style name="CustomToolbarTitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:textSize">24sp</item>
-        <item name="android:fontFamily">@font/roboto</item>
         <item name="android:textColor">#FFFFFF</item>
     </style>
 
